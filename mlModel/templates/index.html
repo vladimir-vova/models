@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Regression Model Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        div {
+            margin-bottom: 10px;
+        }
+        label {
+            margin-bottom: 5px;
+            display: block;
+            color: #666;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h3 {
+            color: #00FFFF;
+        }
+    </style>
+</head>
+<body>
+    <h2>Predict Boston Housing Prices</h2>
+    <form action="/predict" method="post">
+        <div>
+            <label for="Length">Length (мм):</label>
+            <input type="text" id="Length" name="Length" required>
+        </div>
+        <div>
+            <label for="Diameter">Diameter (мм):</label>
+            <input type="text" id="Diameter" name="Diameter" required>
+        </div>
+        <div>
+            <label for="Height">Height (мм):</label>
+            <input type="text" id="Height" name="Height" required>
+        </div>
+        <div>
+            <label for="Whole weight">Whole weight (граммы):</label>
+            <input type="text" id="Whole weight" name="Whole weight" required>
+        </div>
+        <div>
+            <label for="Shucked weight">Shucked weight (граммы):</label>
+            <input type="text" id="Shucked weight" name="Shucked weight" required>
+        </div>
+        <div>
+            <label for="Viscera weight">Viscera weight (граммы):</label>
+            <input type="text" id="Viscera weight" name="Viscera weight" required>
+        </div>
+        <div>
+            <label for="Shell weight">Shell weight (граммы):</label>
+            <input type="text" id="Shell weight" name="Shell weight" required>
+        </div>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
